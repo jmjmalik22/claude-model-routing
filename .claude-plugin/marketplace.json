@@ -1,5 +1,6 @@
 {
   "name": "model-routing-marketplace",
+  "description": "Cost-aware model routing for Claude Code subagents.",
   "owner": { "name": "Jitendra Singh Malik" },
   "plugins": [
     {
