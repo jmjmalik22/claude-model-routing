@@ -1,0 +1,12 @@
+{
+  "name": "model-routing-marketplace",
+  "owner": { "name": "Jitendra Singh Malik" },
+  "plugins": [
+    {
+      "name": "model-routing",
+      "source": "./plugins/model-routing",
+      "description": "Route subagent work by cost: Haiku scouts for read-only lookups, Sonnet workers for small scoped tasks, Opus for planning and advice.",
+      "version": "1.0.0"
+    }
+  ]
+}

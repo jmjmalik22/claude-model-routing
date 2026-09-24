@@ -1,0 +1,6 @@
+{
+  "name": "model-routing",
+  "version": "1.0.0",
+  "description": "Route subagent work by cost: Haiku scouts for read-only lookups, Sonnet workers for small scoped tasks, Opus for planning and advice.",
+  "author": { "name": "Jitendra Singh Malik" }
+}
