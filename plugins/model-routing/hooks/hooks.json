@@ -6,6 +6,14 @@
           { "type": "command", "command": "cat \"${CLAUDE_PLUGIN_ROOT}/ROUTING.md\"" }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/block-expensive-agents.js\"" }
+        ]
+      }
     ]
   }
 }

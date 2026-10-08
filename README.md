@@ -99,6 +99,11 @@ If your main session is on Sonnet, the routing still works, and Claude can call 
 
 ---
 
+## Cost guardrails
+
+- `worker` is capped at 30 turns and `scout` at 15, with a restricted tool list so they do not inherit every MCP tool and skill. Workers keep a `.worker-progress.md` note so a capped run can resume.
+- Optional: set `MODEL_ROUTING_BLOCK_EXPENSIVE=1` in your environment to deny `general-purpose`, `claude` and `fork` subagents (they inherit your main model and all tools). Off by default.
+
 ## Update
 
 ```
@@ -142,7 +147,8 @@ plugins/model-routing/
 │   ├── scout.md                       # Haiku, read-only
 │   ├── worker.md                      # Sonnet, scoped implementation
 │   └── advisor.md                     # Opus, advisory
-├── hooks/hooks.json                   # loads ROUTING.md at session start
+├── hooks/hooks.json                   # loads ROUTING.md at session start; registers the optional block hook
+│   └── block-expensive-agents.js      # opt-in: denies general-purpose/claude/fork subagents
 └── ROUTING.md                         # the routing rule Claude follows
 ```
 
